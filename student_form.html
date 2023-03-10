@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center bg-secondary py-5 fw-bold text-light ">
+                <p class="display-3 fw-bold">Student Intake Form</p>
+
+            </div>
+        </div>
+        <p>*Please fill out every field</p>
+        <form class="my-3">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="form-group mb-3">
+                        <label for="first-name">First Name*</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="Enter first name">
+
+                        <div id="first-name-error" class="first-name-error errormsg text-danger"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="middle-name">Middle Name</label>
+                        <input type="text" class="form-control" id="middle-name" placeholder="Enter middle name">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="last-name">Last Name*</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Enter last name">
+
+                        <div id="last-name-error" class="last-name-error errormsg text-danger"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group mb-3">
+                <label for="dob-day">Date of Birth*</label>
+                <div class="form-row row">
+                    <div class="col-md-4">
+                        <select class="form-select" id="dob-day">
+                            <option value="">Day</option>
+
+
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+
+                        </select>
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select" id="dob-month">
+                            <option value="">Month</option>
+
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" id="dob-year" placeholder="Year (4 digits)" min="1993"
+                            max="2023">
+
+                        <div id="date-of-birth-error" class="date-of-birth-error errormsg text-danger"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="citizenshipStatus">Citizenship Status:</label>
+                        <select class="form-control" id="citizenshipStatus">
+                            <option value="null" selected>Select</option>
+                            <option value="Canadian/PR">Canadian/PR</option>
+                            <option value="Non-Canadian">Non-Canadian</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3" id="sinNumberSection" style="display: none;">
+                        <label for="sinNumber">SIN Number:</label>
+                        <input type="text" class="form-control" id="sinNumber" pattern="[0-9]{9}" maxlength="9">
+
+
+                    </div>
+                    <div class="form-group mb-3" id="passportNumberSection" style="display: none;">
+                        <label for="passportNumber">Passport Number:</label>
+                        <input type="text" class="form-control" id="passportNumber"
+                             maxlength="10">
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="streetName">Street Name*</label>
+                        <input type="text" class="form-control" id="streetName" minlength="3">
+                        <div id="street-error" class="street-error errormsg text-danger">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="cityName">City Name*</label>
+                        <input type="text" class="form-control" id="cityName" minlength="2">
+                        <div id="city-error" class="city-error errormsg text-danger">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="province">Province*</label>
+                        <select class="form-select" id="province">
+                            <option value="" selected>Select a province</option>
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland and Labrador</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="YT">Yukon</option>
+                        </select>
+                        <div id="province-error" class="province-error errormsg text-danger">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="postalCode">Postal Code*</label>
+                        <input type="text" class="form-control" id="postalCode">
+                        <div id="postal-code-error" class="postal-code-error errormsg text-danger">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="nonCanadian">
+                        <label class="form-check-label" for="nonCanadian">
+                            Non-Canadian
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div id="nonCanadianFields" style="display:none">
+                        <div class="form-group mb-3">
+                            <label for="passportNumber">Passport Number*</label>
+                            <input type="text" class="form-control" id="passportNumber"
+                                pattern="[A-Za-z]{3}[0-9]{5}[A-Za-z]{2}">
+                            <div id="passport-error" class="passport-error errormsg text-danger">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+                <div class="col-md-8">
+                    <div class="form-group mb-3">
+                        <label for="studentEmail">Student Email*</label>
+                        <input type="email" class="form-control" id="studentEmail">
+                        <div id="email-error" class="email-error errormsg text-danger">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" id="submit_btn" disabled>Submit</button>
+                <div id="message"></div>
+
+
+
+
+        </form>
+    </div>
+
+   
+    
+    <script>
+        const citizenshipStatusSelect = document.getElementById('citizenshipStatus');
+        const sinNumberSection = document.getElementById('sinNumberSection');
+        const passportNumberSection = document.getElementById('passportNumberSection');
+
+        citizenshipStatusSelect.addEventListener('change', function () {
+
+            if (citizenshipStatusSelect.value === 'Canadian/PR') {
+                sinNumberSection.style.display = 'block';
+                passportNumberSection.style.display = 'none';
+            } else if (citizenshipStatusSelect.value === 'Non-Canadian') {
+                sinNumberSection.style.display = 'none';
+                passportNumberSection.style.display = 'block';
+            } else {
+                sinNumberSection.style.display = 'none';
+                passportNumberSection.style.display = 'none';
+            }
+        });
+    </script>
+
+
+
+    <script>
+
+
+
+
+        $(document).ready(function () {
+            $(".form-control").on("input", function () {
+                $(".errormsg").remove();
+                var validinputs=validateform();
+                if (validinputs){
+                    $("#submit_btn").prop("disabled",false);
+                }else{
+                    $("#submit_btn").prop("disabled",true);
+                }
+            })
+            $(".form-control,.form-select").on("focus", function () {
+                $(this).siblings('.errormsg').remove();
+            })
+            var $fname = $("#first-name");
+            var $mname = $("#middle-name");
+            var $lname = $("#last-name");
+            var $dob_day = $("#dob-day");
+            var $dob_month = $("#dob-month");
+            var $dob_year = $("#dob-year");
+            var $citizenshipStatus = $("#citizenshipStatus");
+            var $sinNumber = $("#sinNumber");
+            var $passportNumber = $("#passportNumber");
+            var $streetName = $("#streetName");
+            var $cityName = $("#cityName");
+            var $province = $("#province");
+            var $postalCode = $("#postalCode");
+         
+            var $studentEmail = $("#studentEmail");
+
+            
+            $("#submit_btn").on('click', function (e) {
+                e.preventDefault();
+                
+                $(".errormsg").remove();
+                var validated = validateform();
+                
+
+                if(validated){
+                    
+                    var formData = {
+  "fname": $fname.val(),
+  "mname": $mname.val(),
+  "lname": $lname.val(),
+  "dob_day": $dob_day.val(),
+  "dob_month": $dob_month.val(),
+  "dob_year": $dob_year.val(),
+  "citizenshipStatus": $citizenshipStatus.val(),
+  "sinNumber": $sinNumber.val(),
+  "passportNumber": $passportNumber.val(),
+  "streetName": $streetName.val(),
+  "cityName": $cityName.val(),
+  "province": $province.val(),
+  "postalCode": $postalCode.val(),
+  "studentEmail": $studentEmail.val()
+};
+
+$("form").get(0).reset()
+                    showModal();
+                    // return true;
+                }
+
+            })
+
+
+            function validateform(){
+                var isvalid=true;
+    if (!checkName($fname.val())) {
+                    isvalid = false;
+                    
+                    $fname.after(`<div class="errormsg text-danger">First Name must be atleast 2 characters</div>`);
+                }
+                if (!checkName($lname.val())) {
+                    isvalid = false;
+                    $lname.after(`<div class="errormsg text-danger">Last Name must be atleast 2 characters</div>`);
+                }
+
+                if (!checkdayOfBirth($dob_month.val(), $dob_day.val(), $dob_year.val())) {
+                    isvalid = false;
+                    
+                    $dob_year.parent().after(`<div class="errormsg text-danger">Student age must be less than 30 years</div>`);
+                }
+
+                if ($citizenshipStatus.val() == "null") {
+                    isvalid = false;
+                    
+                    $citizenshipStatus.after(`<div class="errormsg text-danger">Please Select a citizen Status</div>`)
+                } else {
+                    if (!checkcitizenship($citizenshipStatus.val(), $sinNumber.val(), $passportNumber.val())) {
+                        
+                        isvalid = false;
+
+                    }
+                }
+
+                if (!checkaddressStreet($streetName.val())) {
+                    isvalid = false;
+                    
+                    $streetName.after(`<div class="errormsg text-danger">Please Enter Valid Street address</div>`);
+                }
+
+                if (!checkaddressCity($cityName.val())) {
+                    isvalid = false;
+                    
+                    $cityName.after(`<div class="errormsg text-danger">Please Enter Valid City Name</div>`);
+                }
+                if (!checkaddressProvince($province.val())) {
+                    isvalid = false;
+                    
+                    $province.after(`<div class="errormsg text-danger">Please Select a valid Province</div>`);
+                }
+                if (!checkaddressPostalCode($postalCode.val())) {
+                    isvalid = false;
+                    
+                    $postalCode.after(`<div class="errormsg text-danger">Please enter valid postal code in A1A 1A1 format</div>`);
+                }
+
+                if (!checkStudentemail($studentEmail.val())) {
+                    isvalid = false;
+                    
+                    $studentEmail.after(`<div class="errormsg text-danger">Please enter valid Email Address</div>`);
+                }
+
+                if(isvalid){
+                    return true;
+                }else{
+                    return false;
+                }
+}
+
+
+
+
+
+        })
+
+
+        
+function showModal() {
+ 
+  const modal = $('<div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true"></div>');
+
+  const modalContent = $('<div class="modal-dialog bg-light" role="document"></div>');
+  
+  const modalHeader = $('<div class="modal-header"></div>');
+  
+  const modalTitle = $('<h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>');
+  
+  const closeButton = $('<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>');
+  
+  const closeIcon = $('<span aria-hidden="true">&times;</span>');
+  
+  const modalBody = $('<div class="modal-body">Thank you for Applying!</div>');
+  
+  const modalFooter = $('<div class="modal-footer"></div>');
+  
+  const closeButton2 = $('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>');
+  
+
+
+  closeButton.append(closeIcon);
+  modalHeader.append(modalTitle, closeButton);
+  modalFooter.append(closeButton2);
+  modalContent.append(modalHeader, modalBody, modalFooter);
+  modal.append(modalContent);
+  
+ 
+  $('body').append(modal);
+  modal.modal('show');
+}
+
+        function checkName(name) {
+            if (name.length >= 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
+
+        }
+
+        function checkMiddleName(middle) {
+            if (middle.length >= 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+
+        }
+
+
+        function checkStudentemail(email) {
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.match(emailRegex)) {
+                return true;
+            } else {
+
+                return false;
+            }
+            // //write some logic here to compare the email and return true or false
+            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+            // {
+            //     return (true)
+            // }
+            //     return (false)
+        }
+
+        function checkdayOfBirth(monthOfBirth, dayOfBirth, yearOfBirth) {
+            let birthdate = new Date(`${monthOfBirth} ${dayOfBirth}, ${yearOfBirth}`);
+            let cage = new Date(Date.now() - birthdate.getTime()).getUTCFullYear() - 1970;
+            if (cage < 0 || cage > 29 || yearOfBirth.length < 1) {
+                return false;
+
+            } else {
+                return true;
+
+            }
+        }
+
+        function checkcitizenship(citizenshipStatus, sinNumber, passportNumber) {
+            
+            if (citizenshipStatus === "Canadian/PR" && (sinNumber === null || sinNumber.length !== 9 || !/^\d+$/.test(sinNumber))) {
+
+                $("#sinNumber").after(`<div class="errormsg text-danger">SIN number must be a 9-digit number.</div>`);
+                return false;
+
+            } else if (citizenshipStatus === "Non-Canadian" && (passportNumber.length !== 10 || !(/^[A-Za-z]{3}\d{5}[A-Za-z]{2}$/).test(passportNumber))) {
+                
+                $("#passportNumber").after(`<div class="errormsg text-danger">Passport number must be in the format AAA12345AA.</div>`);
+                return false;
+
+            } else {
+                return true;
+
+            }
+        }
+
+        function checkaddressCity(addressCity) {
+            if (addressCity.length < 2) {
+
+                return false;
+
+            } else {
+                return true;
+
+            }
+        }
+
+        function checkaddressStreet(addressStreet) {
+            if (addressStreet.length < 3) {
+
+                return false;
+
+            } else {
+                return true;
+
+            }
+
+        }
+
+        function checkaddressProvince(addressProvince) {
+            if (addressProvince == null || addressProvince == "") {
+
+                return false;
+
+            } else {
+                return true;
+
+            }
+
+        }
+
+        function checkaddressPostalCode(addressPostalCode) {
+            if (addressPostalCode.length < 6 ||  !(/^[A-Za-z]\d[A-Za-z]\s*\d[A-Za-z]\d$/).test(addressPostalCode)) {
+
+                return false;
+
+            } else {
+                return true;
+
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
